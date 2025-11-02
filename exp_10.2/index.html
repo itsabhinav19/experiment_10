@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MiniBlog — HTML/CSS/JS</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>MiniBlog</h1>
+        <p class="tag">Write. Share. Connect.</p>
+      </div>
+
+      <div class="user-area">
+        <select id="userSelect" title="Switch user"></select>
+        <button id="newUserBtn" class="btn ghost">New User</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <aside class="sidebar card">
+      <h3>Users</h3>
+      <ul id="userList" class="user-list"></ul>
+
+      <hr />
+
+      <div class="card small">
+        <h4>Create User</h4>
+        <form id="userForm" class="user-form">
+          <input id="username" placeholder="username (unique)" required />
+          <input id="fullname" placeholder="Full name" required />
+          <input id="bio" placeholder="Short bio (optional)" />
+          <button class="btn primary">Create</button>
+        </form>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="card" id="composerCard">
+        <div class="composer-header">
+          <h2>Create Post</h2>
+          <small id="activeUserLabel" class="muted">Not signed in</small>
+        </div>
+        <form id="postForm" class="post-form">
+          <input id="postTitle" placeholder="Post title" required />
+          <textarea id="postBody" rows="6" placeholder="Write something inspiring..." required></textarea>
+          <div class="form-row">
+            <button class="btn primary">Publish</button>
+            <button id="cancelPost" type="button" class="btn ghost hidden">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="posts" class="posts"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">MiniBlog — Demo UI • Data is stored in memory • No backend</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
