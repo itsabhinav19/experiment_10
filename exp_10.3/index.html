@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MiniSocial — Demo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container top-inner">
+      <div class="brand">
+        <h1>MiniSocial</h1>
+        <small class="muted">Connect • Share • Explore</small>
+      </div>
+      <div class="search-wrap">
+        <input id="searchInput" placeholder="Search posts or users..." />
+      </div>
+      <div class="user-actions" id="authArea">
+        <!-- Filled by JS: login/signup or profile + logout -->
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="sidebar card">
+      <div id="profileCard" class="profile-card">
+        <!-- profile info inserted by JS -->
+      </div>
+      <hr />
+      <div class="small">
+        <h4>Switch User</h4>
+        <select id="userSelect"></select>
+        <button id="btnNewUser" class="btn ghost">New user</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div id="composer" class="card composer hidden">
+        <form id="postForm">
+          <textarea id="postText" placeholder="What's happening?" rows="3" required></textarea>
+          <input id="postImage" placeholder="Image URL (optional)" />
+          <div class="form-row">
+            <button class="btn primary">Post</button>
+            <button type="button" id="btnCancelPost" class="btn ghost">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card actions-row">
+        <button id="btnShowComposer" class="btn primary">Create Post</button>
+        <button id="btnFeedRefresh" class="btn ghost">Refresh Feed</button>
+      </div>
+
+      <div id="feed" class="feed"></div>
+    </section>
+  </main>
+
+  <!-- AUTH MODAL -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="authClose">✕</button>
+      <h3 id="authTitle">Sign In</h3>
+
+      <form id="authForm">
+        <input id="authUsername" placeholder="username" required/>
+        <input id="authName" placeholder="full name (signup only)" class="hidden"/>
+        <input id="authPassword" placeholder="password" type="password" required/>
+        <div class="form-row">
+          <button class="btn primary" id="authSubmit">Submit</button>
+          <button type="button" class="btn ghost" id="toggleAuth">Switch to Sign up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">MiniSocial • Demo • client-side only • Data saved to localStorage</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
